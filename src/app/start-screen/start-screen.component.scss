@@ -1,0 +1,29 @@
+.start-screen {
+    background-color: #3B3030;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%; // -> kein Scrollbalken, denn in vw ist der Scrollbalken nicht mit eingerechnet
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    img {
+        height: 100vh;
+    }
+}
+
+.start-label-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    img {
+        width: 30vw;
+        height: auto;
+        &:hover {
+            filter: brightness(1.25);
+            cursor: pointer;
+        }
+    }
+}
