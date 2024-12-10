@@ -1,4 +1,4 @@
-<app-player style="top: 130px" class="player-position"></app-player>
+<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 100 + i * 150}" [name]="player" class="player-position"></app-player> <!-- [name]: Input-Variable -> Ich übergebe diese Variable hiermit an die Unter-Komponente "app-player". -->
 
 <div class="playground">
     <div class="card-stack">    
