@@ -32,7 +32,7 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation) {      
       let pickedCard: string = JSON.stringify(this.game.stack.pop());
       this.currentCard = pickedCard.substring(1, pickedCard.length-1); // Mit "pop()" nehme ich den letzten Wert aus dem Array und gleichzeitig wird dieser dann aus dem Array entfernt.
       this.pickCardAnimation = true;      
@@ -41,6 +41,8 @@ export class GameComponent implements OnInit {
       setTimeout(() => {        
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
+        this.game.currentPlayer++;
+        this.game.currentPlayer = this.game.currentPlayer % this.game.players.length; // Modulo-Operator -> wird wieder auf 0 gesetzt, wenn Länge (Anzahl) der "players" erreicht wurde
       }, 1000);
     }    
   }
