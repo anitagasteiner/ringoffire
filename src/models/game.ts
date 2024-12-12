@@ -1,5 +1,5 @@
 export class Game {
-    public players: string[] = ['Gertrude', 'Sibylle', 'Waltraud', 'Bärbel']; // "public": weil ich in anderen Dateien darauf zugreifen will
+    public players: string[] = ['Anita', 'Bärbel']; // "public": weil ich in anderen Dateien darauf zugreifen will
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
