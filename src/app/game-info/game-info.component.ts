@@ -5,6 +5,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   templateUrl: './game-info.component.html',
   styleUrls: ['./game-info.component.scss']
 })
+
 export class GameInfoComponent implements OnInit, OnChanges {
 
   cardAction = [
@@ -53,7 +54,7 @@ export class GameInfoComponent implements OnInit, OnChanges {
       description: 'Go around in a circle and you have to keep asking questions to each other. Doesn’t matter what the question is, as long as its a question. Whoever messes up and does not say a question, drinks.'
     },
     {
-      title: 'Never have I ever&nbsp;...',
+      title: 'Never have I ever ...',
       description: 'Say something you never did. Everyone who did it has to drink.'
     },
     {
@@ -73,7 +74,12 @@ export class GameInfoComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log('Current card: ', this.card);
+    if (this.card) { // -> soll nur ausgeführt werden, wenn schon eine Karte gespielt wurde
+      console.log('Current card is: ', this.card);
+      let cardNumber = +this.card.split('_')[1]; // am Unterstrich geteilt, auf Stelle 1 greife ich zu; mit dem "+" davor wird der String zur Number
+      this.title = this.cardAction[cardNumber - 1].title;
+      this.description = this.cardAction[cardNumber -1].description;
+    }    
   }
 
 }
