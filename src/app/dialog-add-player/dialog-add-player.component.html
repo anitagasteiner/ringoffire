@@ -9,5 +9,6 @@
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+  <!-- <button mat-button mat-dialog-close>No Thanks</button> -->
+  <button mat-button [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Ok</button> <!-- "disabled: Wenn nichts eingegeben wurde, kann der Button nicht angeklickt werden." -->
 </mat-dialog-actions>

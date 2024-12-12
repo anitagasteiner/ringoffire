@@ -1,10 +1,8 @@
 <mat-card>
     <mat-card-header>
         <mat-card-title>
-            {{ title }}
+            {{ card ? title : 'Please pick a card' }} <!-- Wenn die Variable "card" existiert, dann wird der "title" angezeigt, ansonsten steht der Text in den Anführungszeichen. -->
         </mat-card-title>
     </mat-card-header>
-    <mat-card-content>{{ description }}</mat-card-content>
+    <mat-card-content>{{ card ? description : 'Please click on the card stack to select the first card.' }}</mat-card-content>
 </mat-card>
-  
-  
